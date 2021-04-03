@@ -1,8 +1,6 @@
 version: 2.1
 orbs:
   ruby: circleci/ruby@0.1.2 
-  heroku: circleci/heroku@1.2.6 # Use the Heroku orb in your config
-
 
 jobs:
   build:
@@ -12,17 +10,6 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Force Bundler Version
-          command: |
-           sudo gem update --system        
-
-workflows:
-   heroku_deploy:
-     jobs:
-       - build
-       - heroku/deploy-via-git:
-           requires:
-             - build # only run deploy-via-git job if the build job has completed
-           filters:
-             branches:
-               only: master 
+          name: Which bundler?
+          command: bundle -v
+      - ruby/bundle-install
