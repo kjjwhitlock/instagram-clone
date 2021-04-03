@@ -102,7 +102,7 @@ GEM
       nokogiri (>= 1.5.9)
     mail (2.7.1)
       mini_mime (>= 0.1.1)
-    marcel (1.0.0)
+    marcel (1.0.1)
     method_source (1.0.0)
     mini_mime (1.0.3)
     mini_portile2 (2.5.0)
@@ -250,7 +250,7 @@ DEPENDENCIES
   webpacker (~> 5.0)
 
 RUBY VERSION
-   ruby 2.7.2p137
+   ruby 2.6.5p114
 
 BUNDLED WITH
    2.1.4
