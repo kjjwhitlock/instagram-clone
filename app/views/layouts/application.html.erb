@@ -1,28 +1,31 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Instagram</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <%= csp_meta_tag %>
-  </head>
-
-  <body>
-    <%= yield %>
-    <header class="navbar navbar-fixed-top">
-      <div class="navbar-inner">
-        <div class="container">
-          <%= link_to "sample app", "#", id: "logo" %>
-          <nav>
-            <ul class="nav pull-right">
-              <li><%= link_to "Home", '#' %></li>
-              <li><%= link_to "Help", '#' %></li>
-              <li><%= link_to "Sign in", '#' %></li>
-            </ul>
-          </nav>
-        </div>
-      </div>
-      </header>
-  </body>
+<head>
+<title><%= full title(yield(:title)) %></title>
+<%= stylesheet link tag "application", media: "all" %>
+<%= javascript include tag "application" %>
+<%= csrf meta tags %>
+<!--[if lt IE 9]>
+<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+</head>
+<body>
+<header class="navbar navbar-fixed-top">
+<div class="navbar-inner">
+<div class="container">
+<%= link to "sample app", '#', id: "logo" %>
+<nav>
+<ul class="nav pull-right">
+<li><%= link to "Home", '#' %></li>
+<li><%= link to "Help", '#' %></li>
+<li><%= link to "Sign in", '#' %></li>
+</ul>
+</nav>
+</div>
+</div>
+</header>
+<div class="container">
+<%= yield %>
+</div>
+</body>
 </html>
